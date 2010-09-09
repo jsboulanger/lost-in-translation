@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+#
+# lost_in_translation (lit) finds unused i18n translations in your
+# ruby/erb source code.
+#
+require File.dirname(__FILE__) + '/../lib/lost_in_translation'
+
+LostInTranslation::Cli::Application.new(ARGV).run!
