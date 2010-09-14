@@ -8,10 +8,11 @@ module LostInTranslation
       attr_reader :sources, :translations
 
       def run!
-        parser = LostInTranslation::CodeParser.new(LostInTranslation::Detector::TranslateDetector.new(self))
+        parser = LostInTranslation::CodeParser.new
         puts "Searching source code:"
 
         self.sources.each do |source|
+          parser.detectors[0] = LostInTranslation::Detector::TranslateDetector.new(self, source)
           print "."
           parser.process(source.syntax_tree)
         end

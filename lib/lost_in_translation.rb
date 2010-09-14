@@ -12,6 +12,12 @@ require 'i18n'
 require 'erubis'
 require 'ruby_parser'
 
+begin
+  # Only if we are working with Rails, the tool will still work if we don't.
+  require 'action_view'
+rescue LoadError
+end
+
 require 'lost_in_translation/cli/application'
 require 'lost_in_translation/cli/unused_command'
 require 'lost_in_translation/code_parser'

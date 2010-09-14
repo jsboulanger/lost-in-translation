@@ -1,9 +1,11 @@
 module LostInTranslation
   class CodeParser
-    def initialize(detectors)
+    def initialize(detectors = [])
       @detectors = detectors
       @detectors = [@detectors] unless @detectors.is_a?(Array)
     end
+
+    attr_reader :detectors
 
     def process(exp)
       return unless exp.is_a?(Array)
