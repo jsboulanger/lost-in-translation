@@ -1,5 +1,7 @@
 # Lost in Translation (lit)
 
+WARNING: the core logic has been implemented but this is not usable just yet.
+
 Lost in translation is a tool to help you manage your i18n translation strings in your ruby/rails projects.
 
 It's still under heavy development but it currently implements a function that finds the translation strings of your locale files that are not used anymore.
